@@ -1,5 +1,5 @@
 import { Char } from '../src';
-import { GameObjectParams } from 'game_object';
+import { GameObjectParams } from '@al-engine/game_object';
 
 test('', () => {
   const char = new Char<GameObjectParams>(
