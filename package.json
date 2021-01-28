@@ -1,0 +1,63 @@
+{
+  "version": "0.1.0",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "engines": {
+    "node": ">=10"
+  },
+  "scripts": {
+    "postinstall": "mkdir $INIT_CWD/assets/vendors && mkdir $INIT_CWD/assets/vendors/messages && cp font.png $INIT_CWD/assets/vendors/messages/",
+    "start": "tsdx watch",
+    "build": "tsdx build",
+    "test": "tsdx test",
+    "lint": "tsdx lint",
+    "prepare": "tsdx build",
+    "size": "size-limit",
+    "analyze": "size-limit --why",
+    "prettier": "prettier {src,test}/*.ts --write"
+  },
+  "peerDependencies": {},
+  "husky": {
+    "hooks": {
+      "pre-commit": "tsdx lint"
+    }
+  },
+  "prettier": {
+    "printWidth": 80,
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "es5"
+  },
+  "name": "@al-engine/message",
+  "author": "zhesha",
+  "module": "dist/message.esm.js",
+  "size-limit": [
+    {
+      "path": "dist/message.cjs.production.min.js",
+      "limit": "10 KB"
+    },
+    {
+      "path": "dist/message.esm.js",
+      "limit": "10 KB"
+    }
+  ],
+  "description": "Message for Al-engine, minimalistic game engine, for pixel perfect games",
+  "devDependencies": {
+    "@size-limit/preset-small-lib": "^4.9.1",
+    "husky": "^4.3.7",
+    "size-limit": "^4.9.1",
+    "tsdx": "^0.14.1",
+    "tslib": "^2.1.0",
+    "typescript": "^4.1.3"
+  },
+  "dependencies": {
+    "@al-engine/asset": "^0.1.0",
+    "@al-engine/core": "^0.2.0",
+    "@al-engine/game_object": "^0.1.0"
+  }
+}
