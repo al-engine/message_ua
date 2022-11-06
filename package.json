@@ -12,7 +12,7 @@
     "node": ">=10"
   },
   "scripts": {
-    "postinstall": "mkdir -p $INIT_CWD/assets/vendors/messages && cp font.png $INIT_CWD/assets/vendors/messages/",
+    "postinstall": "mkdir -p $INIT_CWD/assets/vendors/messages && cp font_ua.png $INIT_CWD/assets/vendors/messages/",
     "start": "tsdx watch",
     "build": "tsdx build",
     "test": "tsdx test",
@@ -34,7 +34,7 @@
     "singleQuote": true,
     "trailingComma": "es5"
   },
-  "name": "@al-engine/message",
+  "name": "@al-engine/message_ua",
   "author": "zhesha",
   "module": "dist/message.esm.js",
   "size-limit": [
