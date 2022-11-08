@@ -1,12 +1,12 @@
 {
-  "version": "0.1.4",
+  "version": "0.1.11",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "files": [
     "dist",
     "src",
-    "font.png"
+    "font_ua.png"
   ],
   "engines": {
     "node": ">=10"
@@ -59,6 +59,7 @@
   "dependencies": {
     "@al-engine/asset": "^0.1.0",
     "@al-engine/core": "^0.2.0",
-    "@al-engine/game_object": "^0.1.0"
+    "@al-engine/game_object": "^0.1.0",
+    "@al-engine/message": "^0.1.5"
   }
 }

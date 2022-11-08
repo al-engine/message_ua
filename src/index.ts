@@ -1,12 +1,11 @@
 import GameObject, { GameObjectParams } from '@al-engine/game_object';
 import { SpriteMapAsset } from '@al-engine/asset';
 import { Sprite } from '@al-engine/core';
+import { IMessage } from '@al-engine/message';
 
 interface Map {
   [index: string]: number;
 }
-
-const charSize = 8;
 const map: Map = {
   а: 0,
   б: 1,
@@ -116,10 +115,14 @@ const map: Map = {
   '|': 105,
   '~': 106,
 };
+export const options = {
+  charSize: 8,
+  charsCount: 107,
+};
 
-export default class Message<
-  Params extends GameObjectParams
-> extends GameObject<Params> {
+export default class Message<Params extends GameObjectParams>
+  extends GameObject<Params>
+  implements IMessage {
   font: SpriteMapAsset;
   message: string;
 
@@ -127,8 +130,8 @@ export default class Message<
     super();
 
     this.size = {
-      height: charSize,
-      width: message.length * charSize,
+      height: options.charSize,
+      width: message.length * options.charSize,
     };
 
     this.message = message;
@@ -151,15 +154,17 @@ export default class Message<
   mountMessage = () => {
     this.children = [];
     this.size = {
-      height: charSize,
-      width: this.message.length * charSize,
+      height: options.charSize,
+      width: this.message.length * options.charSize,
     };
     for (let index = 0; index < this.message.length; index++) {
       const char = this.message[index];
       const spriteIndex = this.getSpriteIndexByChar(char);
       if (spriteIndex !== undefined) {
-        const sprite = this.font.data!.sprites[spriteIndex];
-        this.addChild(new Char(sprite, { x: index * charSize, y: 0 }));
+        const sprite = this.font.data!.sprites[
+          options.charsCount - 1 - spriteIndex
+        ];
+        this.addChild(new Char(sprite, { x: index * options.charSize, y: 0 }));
       }
     }
   };
