@@ -1,5 +1,5 @@
 {
-  "version": "0.1.11",
+  "version": "0.2.0",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -22,7 +22,6 @@
     "analyze": "size-limit --why",
     "prettier": "prettier {src,test}/*.ts --write"
   },
-  "peerDependencies": {},
   "husky": {
     "hooks": {
       "pre-commit": "tsdx lint"
@@ -59,7 +58,7 @@
   "dependencies": {
     "@al-engine/asset": "^0.1.0",
     "@al-engine/core": "^0.2.0",
-    "@al-engine/game_object": "^0.1.0",
-    "@al-engine/message": "^0.1.5"
+    "@al-engine/game_object": "^0.2.0",
+    "@al-engine/message": "^0.2.0"
   }
 }
