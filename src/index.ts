@@ -170,7 +170,10 @@ export default class Message<Params extends GameObjectParams>
         this.addChild(
           new Char(
             sprite,
-            { x: index * options.charSize, y: 0 },
+            {
+              x: this.position.x + index * options.charSize,
+              y: this.position.y,
+            },
             this.renderMode
           )
         );
