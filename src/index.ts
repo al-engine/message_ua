@@ -172,7 +172,7 @@ export default class Message<Params extends GameObjectParams>
             sprite,
             {
               x: this.position.x + index * options.charSize,
-              y: this.position.y,
+              y: this.renderMode === RenderMode.hud ? this.position.y : 0,
             },
             this.renderMode
           )
